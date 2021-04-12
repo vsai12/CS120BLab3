@@ -15,17 +15,17 @@
 # that they are not ran in isolation but in the order shown and the state of the device is not reset or 
 # altered in between executions (unless preconditions are used).
 tests = [ 
-    {'description': 'PIND: 0x5F, PINB: 0x01 => PORTB: 0x03',
+    {'description': 'PIND: 0x5F, PINB: 0x01 => PORTB: 0x02',
     'steps': [ {'inputs': [('PIND',0x5F), ('PINB', 0x01)], 'iterations': 5 } ],
-    'expected': [('PORTB',0x03)],
+    'expected': [('PORTB',0x02)],
     },
     {'description': 'PIND: 0x19, PINB: 0x00 => PORTB: 0x04',
     'steps': [ {'inputs': [('PIND',0x19), ('PINB', 0x00)], 'iterations': 5 } ],
     'expected': [('PORTB',0x04)],
     },
-    {'description': 'PIND: 0x01, PINB: 0x01 => PORTB: 0x01 ',
+    {'description': 'PIND: 0x01, PINB: 0x01 => PORTB: 0x00 ',
     'steps': [ {'inputs': [('PIND',0x01), ('PINB', 0x01)], 'iterations': 5 } ],
-    'expected': [('PORTB',0x01)],
+    'expected': [('PORTB',0x00)],
     },
     ]
 #watch = ['PORTB']
