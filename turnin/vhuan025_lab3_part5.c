@@ -19,12 +19,12 @@ int main(void) {
     /* Insert your solution below */
     while (1) {
 	unsigned char tmpD = PIND;
-	unsigned char tmpB = PINB & 0x01;
+	unsigned char tmpB = 0x00;
 	if((tmpD & 0x80) == 0x80)
 		tmpB = 0x02;
 	else {
 		tmpD = tmpD << 1;
-		tmpD = tmpD | tmpB;
+		tmpD = tmpD | (PINB & 0x01);
 		if(tmpD >= 0x46) {
 			tmpB = 0x02;
 		}
