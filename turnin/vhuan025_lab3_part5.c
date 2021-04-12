@@ -21,15 +21,15 @@ int main(void) {
 	unsigned char tmpD = PIND;
 	unsigned char tmpB = PINB & 0x01;
 	if((tmpD & 0x80) == 0x80)
-		tmpB = (tmpB | 0x02);
+		tmpB = 0x02;
 	else {
 		tmpD = tmpD << 1;
 		tmpD = tmpD | tmpB;
 		if(tmpD >= 0x46) {
-			tmpB = (tmpB | 0x02);
+			tmpB = 0x02;
 		}
 		else if(tmpD > 0x05) {
-			tmpB = (tmpB | 0x04);
+			tmpB = 0x04;
 		}
 	}
 	PORTB = tmpB;
