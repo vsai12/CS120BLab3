@@ -16,11 +16,13 @@ int main(void) {
     /* Insert DDR and PORT initializations */
 	DDRA = 0x00; PORTA = 0xFF; //configure portA as inputs
 	DDRB = 0xFF; PORTB = 0x00; //configure portB as outputs
+	DDRC = 0xFF; PORTC = 0x00; //configure portC as outputs
     /* Insert your solution below */
     while (1) {
         unsigned char tmpALower = PINA << 4;
 	unsigned char tmpAUpper = PINA >> 4;
-	PORTB = tmpALower | tmpAUpper;
+	PORTB = tmpAUpper;
+	PORTC = tmpALower;
     }
     return 1;
 }
