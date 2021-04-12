@@ -14,17 +14,17 @@
 # An example set of tests is shown below. It is important to note that these tests are not "unit tests" in 
 # that they are not ran in isolation but in the order shown and the state of the device is not reset or 
 # altered in between executions (unless preconditions are used).
-tests = [ {'description': 'PINA: 0xAB => PORTB: 0xBA',
+tests = [ {'description': 'PINA: 0xAB => PORTB: 0x0A, PORTB: 0xB0',
     'steps': [ {'inputs': [('PINA',0xAB)], 'iterations': 5 } ],
-    'expected': [('PORTB',0xBA)],
+    'expected': [('PORTB',0x0A),('PORTC',0xB0)],
     },
-    {'description': 'PINA: 0x2E, => PORTB: 0xE2',
+    {'description': 'PINA: 0x2E, => PORTB: 0x02, PORTB: 0xE0',
     'steps': [ {'inputs': [('PINA',0x2E)], 'iterations': 5 } ],
-    'expected': [('PORTB',0xE2)],
+    'expected': [('PORTB',0x02),('PORTC',0xE0)],
     },
-    {'description': 'PINA: 0xFB, => PORTB: 0xBF',
+    {'description': 'PINA: 0xFB, => PORTB: 0x0F, PORTB: 0xB0',
     'steps': [ {'inputs': [('PINA',0xFB)], 'iterations': 5 } ],
-    'expected': [('PORTB',0xBF)],
+    'expected': [('PORTB',0x0F),('PORTC',0xB0)],
     },
     ]
 #watch = ['PORTB']
